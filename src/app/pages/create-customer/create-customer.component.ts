@@ -23,6 +23,15 @@ export class CreateCustomerComponent implements OnInit {
     );
   }
 
+  private titleCaseName(name: string) {
+    let res = "";
+    for (const part of name.split(" ")) {
+      res += part[0].toUpperCase() + part.substring(1).toLowerCase() + " ";
+    }
+
+    return res.trimEnd();
+  }
+
   async onSubmit(f: NgForm) {
     if (f.form.status !== "VALID") {
       this.error = true;
@@ -30,7 +39,7 @@ export class CreateCustomerComponent implements OnInit {
     }
 
     this.loading = true;
-    await this.customer.addCustomer(f.form.value["fullName"], f.form.value["email"]);
+    await this.customer.addCustomer(this.titleCaseName(f.form.value["fullName"]), f.form.value["email"].toLowerCase());
     this.router.navigate(["/"]);
   }
 
