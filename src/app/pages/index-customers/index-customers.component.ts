@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-index-customers',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexCustomersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle(
+      environment.app_name + " - Clients"
+    )
   }
 
 }
