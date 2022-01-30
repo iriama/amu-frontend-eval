@@ -9,18 +9,15 @@ export class CustomerService {
 
   constructor(private supabase: SupabaseService) { }
 
-  async getCustomers() {
-    const customers = await this.supabase.selectAll<Customer>("customers");
-
-    for (let i in customers) {
-      customers[i].invoices_count = await this.supabase.selectCountEquals("invoices", "id_customer", customers[i].id);
-    }
-
-    return customers;
+  getCustomers() {
+    return this.supabase.selectAll<Customer>("customers");
   }
 
   getCustomer(id: number) {
     return this.supabase.selectSingleEqual<Customer>("customers", "id", id);
   }
 
+  async getInvoicesCount(id_customer: number) {
+    return await this.supabase.selectCountEquals("invoices", "id_customer", id_customer);
+  }
 }

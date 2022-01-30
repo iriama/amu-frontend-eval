@@ -1,8 +1,17 @@
 .menu {
-
   border-radius: 0;
+
+  .container {
+    max-width: 800px;
+  }
 
   .logo {
       margin-right: 10px!important;
   }
+}
+
+.main.container {
+  padding-top: 15px;
+  margin: auto;
+  max-width: 600px;
 }

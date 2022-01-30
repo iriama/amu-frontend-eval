@@ -1,8 +1,3 @@
-.segments {
-  margin: auto;
-  max-width: 600px;
-}
-
 .statistic {
   .value {
     font-size: 20px;
@@ -35,4 +30,14 @@
 
 .secondary.bottom {
   text-align: right;
+}
+
+
+.list-segment {
+  min-height: 50px;
+}
+
+.no-clients {
+  text-align: center;
+  padding: 10px;
 }

@@ -1,58 +1,31 @@
-<div class="ui container">
-  <div class="ui segments">
-    <div class="ui secondary segment">
-      <h2>Liste des clients</h2>
-    </div>
-    <div class="ui segment list-segment">
-      <div class="ui relaxed divided list">
-        <a href="#" class="item">
-          <div class="right floated content">
-            <div class="ui statistic">
-              <div class="value">
-                0
-              </div>
-              <div class="label">
-                Factures
-              </div>
-            </div>
-          </div>
-          <div class="header">Jean Luc</div>
-          jean.luc@massat.fr
-        </a>
-        <a href="#" class="item">
-          <div class="right floated content">
-            <div class="ui statistic">
-              <div class="value">
-                0
-              </div>
-              <div class="label">
-                Factures
-              </div>
-            </div>
-          </div>
-          <div class="header">Jean Luc</div>
-          jean.luc@massat.fr
-        </a>
-        <a href="#" class="item">
-          <div class="right floated content">
-            <div class="ui statistic">
-              <div class="value">
-                0
-              </div>
-              <div class="label">
-                Factures
-              </div>
-            </div>
-          </div>
-          <div class="header">Jean Luc</div>
-          jean.luc@massat.fr
-        </a>
+<div class="ui segments">
+  <div class="ui secondary segment">
+    <h2>Liste des clients</h2>
+  </div>
+  <div class="ui segment list-segment list-segment" [class.loading]="loading">
+    <div class="ui relaxed divided list">
+      <div *ngIf="!loading && customers.length < 1" class="ui text no-clients">
+        Aucun client dans la base de données.
       </div>
+      <a *ngFor="let customer of customers" [routerLink]="'/' + customer.id" class="item">
+        <div class="right floated content">
+          <div *ngIf="customer.invoices_count !== null" class="ui statistic">
+            <div class="value">
+              {{ customer.invoices_count }}
+            </div>
+            <div class="label">
+              Facture
+            </div>
+          </div>
+        </div>
+        <div class="header">{{ customer.fullName }}</div>
+        {{ customer.email }}
+      </a>
     </div>
-    <div class="ui secondary bottom segment">
-      <button routerLink="/create" class="ui positive button">
-        <i class="add icon"></i>Créer un client
-      </button>
-    </div>
+  </div>
+  <div class="ui secondary bottom segment">
+    <button routerLink="/create" class="ui positive button">
+      <i class="add icon"></i>Créer un client
+    </button>
   </div>
 </div>
