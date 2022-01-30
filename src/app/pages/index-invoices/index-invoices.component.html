@@ -1,1 +1,34 @@
-<p>index-invoices works!</p>
+<div *ngIf="!current" class="ui active centered inline loader"></div>
+<div *ngIf="current" class="ui segments">
+  <div class="ui secondary segment">
+    <h2>Fiche de {{ current.fullName }}</h2>
+    <p>{{ current.email }}</p>
+  </div>
+  <div class="ui main segment">
+    <div *ngIf="!loading && invoices.length < 1" class="ui text empty-list">
+      Aucune facture trouvée.
+    </div>
+    <table *ngIf="!loading && invoices.length > 0" class="ui celled table">
+      <thead>
+        <tr>
+          <th>Montant</th>
+          <th>État</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices" [class.positive]="invoice.status == 'PAID'">
+          <td>{{ invoice.amount }} €</td>
+          <td><i *ngIf="invoice.status == 'PAID'" class="icon checkmark"></i>{{ statusText(invoice.status) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ui secondary bottom segment">
+    <button routerLink="/" class="ui button">
+      <i class="reply icon"></i>Retour aux clients
+    </button>
+    <button routerLink="invoices/add" class="ui positive button">
+      <i class="add icon"></i>Créer une facture
+    </button>
+  </div>
+</div>

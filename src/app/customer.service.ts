@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Customer } from './interfaces/customer.interface';
+import { Invoice } from './interfaces/invoice.interface';
 import { SupabaseService } from './supabase.service';
 
 @Injectable({
@@ -23,5 +24,9 @@ export class CustomerService {
 
   addCustomer(fullName: string, email: string) {
     return this.supabase.insert("customers", { fullName, email });
+  }
+
+  getInvoices(id_customer: number) {
+    return this.supabase.selectAllEqual<Invoice>("invoices", "id_customer", id_customer);
   }
 }

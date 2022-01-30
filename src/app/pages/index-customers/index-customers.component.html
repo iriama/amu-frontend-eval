@@ -4,8 +4,8 @@
   </div>
   <div class="ui main segment" [class.loading]="loading">
     <div class="ui relaxed divided list">
-      <div *ngIf="!loading && customers.length < 1" class="ui text no-clients">
-        Aucun client dans la base de données.
+      <div *ngIf="!loading && customers.length < 1" class="ui text empty-list">
+        Aucun client trouvé.
       </div>
       <a *ngFor="let customer of customers" [routerLink]="'/' + customer.id" class="item">
         <div class="right floated content">

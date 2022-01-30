@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  app_name: "EzFacture",
+  app_name: "EasyFacture",
   supabaseUrl: "https://jgnwdytvjsgmpujongqf.supabase.co",
   supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjQzNTU3OTc1LCJleHAiOjE5NTkxMzM5NzV9.D7s3fjWQoUFGBhHmm1oHfs6X4MNVYUkzGw68ku5LVe0"
 };
