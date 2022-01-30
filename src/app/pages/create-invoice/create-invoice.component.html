@@ -1,1 +1,32 @@
-<p>create-invoice works!</p>
+<div *ngIf="!id_customer" class="ui active centered inline loader"></div>
+<div *ngIf="id_customer" class="ui segments">
+  <div class="ui secondary segment">
+    <h2>Ajouter une facture</h2>
+  </div>
+  <div [class.loading]="loading" class="ui main segment">
+    <form class="ui form" id="create-form" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <div [class.error]="error && !amount.valid" class="field">
+        <label>Montant</label>
+        <input type="number" name="amount" placeholder="Montant en €" ngModel required min="0" #amount="ngModel">
+        <p class="ui error message">
+          Le montant doit être positif.
+        </p>
+      </div>
+      <div class="field">
+        <label>État</label>
+        <select name="status" class="ui fluid dropdown" ngModel="SENT" required #status="ngModel">
+          <option value="SENT">Envoyée</option>
+          <option value="PAID">Payée</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="ui secondary bottom segment">
+    <button [routerLink]="'/' + id_customer" class="ui button">
+      <i class="reply icon"></i>Retour à la fiche du client
+    </button>
+    <button type="submit" form="create-form" [class.disabled]="loading" class="ui positive button">
+      <i class="save icon"></i>Enregistrer la facture
+    </button>
+  </div>
+</div>

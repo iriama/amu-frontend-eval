@@ -29,4 +29,8 @@ export class CustomerService {
   getInvoices(id_customer: number) {
     return this.supabase.selectAllEqual<Invoice>("invoices", "id_customer", id_customer);
   }
+
+  addInvoice(id_customer: number, amount: number, status: string) {
+    return this.supabase.insert("invoices", { id_customer, amount, status });
+  }
 }
