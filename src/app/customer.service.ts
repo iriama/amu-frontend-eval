@@ -18,12 +18,16 @@ export class CustomerService {
     return this.supabase.selectSingleEqual<Customer>("customers", "id", id);
   }
 
+  deleteCustomer(id: number) {
+    return this.supabase.deleteEquals("customers", "id", id);
+  }
+
   getInvoicesCount(id_customer: number) {
     return this.supabase.selectCountEquals("invoices", "id_customer", id_customer);
   }
 
   addCustomer(fullName: string, email: string) {
-    return this.supabase.insert("customers", { fullName, email });
+    return this.supabase.insert<Customer>("customers", { fullName, email });
   }
 
   getInvoices(id_customer: number) {
@@ -31,6 +35,10 @@ export class CustomerService {
   }
 
   addInvoice(id_customer: number, amount: number, status: string) {
-    return this.supabase.insert("invoices", { id_customer, amount, status });
+    return this.supabase.insert<Invoice>("invoices", { id_customer, amount, status });
+  }
+
+  deleteInvoice(id: number) {
+    return this.supabase.deleteEquals("invoices", "id", id);
   }
 }

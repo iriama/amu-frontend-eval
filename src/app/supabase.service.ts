@@ -41,10 +41,17 @@ export class SupabaseService {
     return Promise.resolve(data as T);
   }
 
-  async insert<T>(table: string, item: T) {
+  async insert<T>(table: string, item: any) {
     const { error, data } = await this.supabase.from(table).insert(item).single();
     if (error) return Promise.reject(error);
 
     return Promise.resolve(data as T);
+  }
+
+  async deleteEquals(table: string, field: string, value: any) {
+    const { error, data } = await this.supabase.from(table).delete().eq(field, value);
+    if (error) return Promise.reject(error);
+
+    return Promise.resolve();
   }
 }
