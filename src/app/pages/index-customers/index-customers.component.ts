@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { CustomerService } from 'src/app/customer.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -9,12 +10,14 @@ import { environment } from 'src/environments/environment';
 })
 export class IndexCustomersComponent implements OnInit {
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private customer: CustomerService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.title.setTitle(
       environment.app_name + " - Clients"
     )
+
+    console.log(await this.customer.getCustomers());
   }
 
 }

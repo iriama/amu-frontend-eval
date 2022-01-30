@@ -7,6 +7,8 @@ import { IndexCustomersComponent } from './pages/index-customers/index-customers
 import { CreateCustomerComponent } from './pages/create-customer/create-customer.component';
 import { IndexInvoicesComponent } from './pages/index-invoices/index-invoices.component';
 import { CreateInvoiceComponent } from './pages/create-invoice/create-invoice.component';
+import { SupabaseService } from './supabase.service';
+import { CustomerService } from './customer.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { CreateInvoiceComponent } from './pages/create-invoice/create-invoice.co
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SupabaseService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

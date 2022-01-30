@@ -4,10 +4,8 @@
       <img class="logo" src="assets/logo.png">
       EzFacture
     </a>
-    <a routerLink="/" class="item" routerLinkActive="active"><i class="users icon"></i> Clients</a>
+    <a routerLink="/" class="item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="users icon"></i> Clients</a>
   </div>
 </div>
 
-<div class="ui container">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

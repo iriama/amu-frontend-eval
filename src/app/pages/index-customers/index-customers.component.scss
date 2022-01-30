@@ -1,0 +1,38 @@
+.segments {
+  margin: auto;
+  max-width: 600px;
+}
+
+.statistic {
+  .value {
+    font-size: 20px;
+  }
+  .label {
+    font-size: 10px;
+  }
+}
+
+.list-segment {
+  padding: 0;
+}
+
+.item {
+  padding: 10px!important;
+  color: rgba(0, 0, 0, .75)!important;
+  transition: all .2s;
+}
+
+.item:hover {
+  background: rgba(0, 0, 0, .025);
+}
+
+.secondary {
+  h2 {
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, .87);
+  }
+}
+
+.secondary.bottom {
+  text-align: right;
+}
