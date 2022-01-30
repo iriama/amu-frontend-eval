@@ -17,7 +17,11 @@ export class CustomerService {
     return this.supabase.selectSingleEqual<Customer>("customers", "id", id);
   }
 
-  async getInvoicesCount(id_customer: number) {
-    return await this.supabase.selectCountEquals("invoices", "id_customer", id_customer);
+  getInvoicesCount(id_customer: number) {
+    return this.supabase.selectCountEquals("invoices", "id_customer", id_customer);
+  }
+
+  addCustomer(fullName: string, email: string) {
+    return this.supabase.insert("customers", { fullName, email });
   }
 }

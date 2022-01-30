@@ -1,1 +1,31 @@
-<p>create-customer works!</p>
+<div class="ui segments">
+  <div class="ui secondary segment">
+    <h2>Créer un client</h2>
+  </div>
+  <div [class.loading]="loading" class="ui main segment">
+    <form class="ui form" id="create-form" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <div [class.error]="error && !name.valid" class="field">
+        <label>Nom complet</label>
+        <input type="text" name="fullName" placeholder="Jean Dupont" ngModel required minlength="3" #name="ngModel">
+        <p class="ui error message">
+          Le nom doit comporter au moins 3 caractères.
+        </p>
+      </div>
+      <div [class.error]="error && !email.valid" class="field">
+        <label>Adresse mail</label>
+        <input type="email" name="email" placeholder="example@domaine.com" ngModel required email #email="ngModel">
+        <p class="ui error message">
+          Adresse mail invalide.
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="ui secondary segment bottom">
+    <button routerLink="/" class="ui button">
+      <i class="reply icon"></i>Retour aux clients
+    </button>
+    <button type="submit" form="create-form" routerLink="/create" [class.disabled]="loading" class="ui positive button">
+      <i class="save icon"></i>Enregistrer
+    </button>
+  </div>
+</div>

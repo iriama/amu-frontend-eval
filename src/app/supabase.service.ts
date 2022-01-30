@@ -40,4 +40,11 @@ export class SupabaseService {
 
     return Promise.resolve(data as T);
   }
+
+  async insert<T>(table: string, item: T) {
+    const { error, data } = await this.supabase.from(table).insert(item).single();
+    if (error) return Promise.reject(error);
+
+    return Promise.resolve(data as T);
+  }
 }

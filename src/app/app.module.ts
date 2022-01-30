@@ -9,6 +9,7 @@ import { IndexInvoicesComponent } from './pages/index-invoices/index-invoices.co
 import { CreateInvoiceComponent } from './pages/create-invoice/create-invoice.component';
 import { SupabaseService } from './supabase.service';
 import { CustomerService } from './customer.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CustomerService } from './customer.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [SupabaseService, CustomerService],
   bootstrap: [AppComponent]

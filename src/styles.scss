@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+.secondary.segment {
+  h2 {
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, .87);
+  }
+}
+
+.secondary.bottom.segment {
+  text-align: right;
+
+  button {
+    margin-left: 5px;
+  }
+}
+
+.main.segment {
+  min-height: 50px;
+}

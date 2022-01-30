@@ -2,19 +2,19 @@
   <div class="ui secondary segment">
     <h2>Liste des clients</h2>
   </div>
-  <div class="ui segment list-segment list-segment" [class.loading]="loading">
+  <div class="ui main segment" [class.loading]="loading">
     <div class="ui relaxed divided list">
       <div *ngIf="!loading && customers.length < 1" class="ui text no-clients">
         Aucun client dans la base de données.
       </div>
       <a *ngFor="let customer of customers" [routerLink]="'/' + customer.id" class="item">
         <div class="right floated content">
-          <div *ngIf="customer.invoices_count !== null" class="ui statistic">
+          <div *ngIf="customer.invoices_count !== undefined" class="ui statistic">
             <div class="value">
               {{ customer.invoices_count }}
             </div>
             <div class="label">
-              Facture
+              {{ customer.invoices_count > 1 ? "Factures" : "Facture" }}
             </div>
           </div>
         </div>
