@@ -7,8 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-create-invoice',
-  templateUrl: './create-invoice.component.html',
-  styleUrls: ['./create-invoice.component.scss']
+  templateUrl: './create-invoice.component.html'
 })
 export class CreateInvoiceComponent implements OnInit {
 
