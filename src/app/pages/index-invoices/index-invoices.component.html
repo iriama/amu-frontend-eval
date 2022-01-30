@@ -16,9 +16,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let invoice of invoices" [class.positive]="invoice.status == 'PAID'">
+        <tr *ngFor="let invoice of invoices" [class.positive]="invoice.status === 'PAID'">
           <td>{{ invoice.amount }} €</td>
-          <td><i *ngIf="invoice.status == 'PAID'" class="icon checkmark"></i>{{ statusText(invoice.status) }}</td>
+          <td><i *ngIf="invoice.status === 'PAID'" class="icon checkmark"></i>{{ statusText(invoice.status) }}</td>
         </tr>
       </tbody>
     </table>

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CustomerService } from 'src/app/customer.service';
-import { Customer } from 'src/app/interfaces/customer.interface';
-import { Invoice } from 'src/app/interfaces/invoice.interface';
-import { environment } from 'src/environments/environment';
+import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
+import { ActivatedRoute, Router } from "@angular/router";
+import { CustomerService } from "src/app/customer.service";
+import { Customer } from "src/app/interfaces/customer.interface";
+import { Invoice } from "src/app/interfaces/invoice.interface";
+import { environment } from "src/environments/environment";
 
 @Component({
-  selector: 'app-index-invoices',
-  templateUrl: './index-invoices.component.html',
-  styleUrls: ['./index-invoices.component.scss']
+  selector: "app-index-invoices",
+  templateUrl: "./index-invoices.component.html",
+  styleUrls: ["./index-invoices.component.scss"]
 })
 export class IndexInvoicesComponent implements OnInit {
 

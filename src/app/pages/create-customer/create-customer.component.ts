@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { CustomerService } from 'src/app/customer.service';
-import { environment } from 'src/environments/environment';
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { Title } from "@angular/platform-browser";
+import { Router } from "@angular/router";
+import { CustomerService } from "src/app/customer.service";
+import { environment } from "src/environments/environment";
 
 @Component({
-  selector: 'app-create-customer',
-  templateUrl: './create-customer.component.html'
+  selector: "app-create-customer",
+  templateUrl: "./create-customer.component.html"
 })
 export class CreateCustomerComponent implements OnInit {
 

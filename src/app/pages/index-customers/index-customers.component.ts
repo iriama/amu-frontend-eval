@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { CustomerService } from 'src/app/customer.service';
-import { Customer } from 'src/app/interfaces/customer.interface';
-import { environment } from 'src/environments/environment';
+import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
+import { CustomerService } from "src/app/customer.service";
+import { Customer } from "src/app/interfaces/customer.interface";
+import { environment } from "src/environments/environment";
 
 @Component({
-  selector: 'app-index-customers',
-  templateUrl: './index-customers.component.html',
-  styleUrls: ['./index-customers.component.scss']
+  selector: "app-index-customers",
+  templateUrl: "./index-customers.component.html",
+  styleUrls: ["./index-customers.component.scss"]
 })
 export class IndexCustomersComponent implements OnInit {
 

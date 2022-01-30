@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Customer } from './interfaces/customer.interface';
-import { Invoice } from './interfaces/invoice.interface';
-import { SupabaseService } from './supabase.service';
+import { Injectable } from "@angular/core";
+import { Customer } from "./interfaces/customer.interface";
+import { Invoice } from "./interfaces/invoice.interface";
+import { SupabaseService } from "./supabase.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class CustomerService {
 
